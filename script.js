@@ -31,7 +31,7 @@ let e = new Promise((resolve,reject) => {
 		resolve("e")
 	}, 5000)
 })
-let x = Promise.any([a,b,c,d,e])
+let x = Promise.race([a,b,c,d,e])
 x.then((data) => {
 	const element = document.getElementById("output");
 	element.innerText = data;
